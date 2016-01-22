@@ -208,7 +208,6 @@ event.preventDefault();
     $("body").on("click",".button_preview_save",function(ev){
 
         $char_type=$("#field_lenght").val();
-        alert($char_type);
        $field_type=$(".select_from_table").val();
         $name=$("#table_name").val();
         $field_name=$(".table_field_name").val();
