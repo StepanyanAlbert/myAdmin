@@ -71,7 +71,7 @@ $(window).load(function () {
                        $('#loading').show();
                    },
                    success:function(result){
-                       alert(result);
+
                    },
                    complete:function(){
                        $('#loading').hide();
@@ -185,12 +185,14 @@ event.preventDefault();
             }
          });
         $("body").on("click",".button_create_database",function(e){
-            if(($(".created_database_name").val())==""||$(".created_database_name").val()==" "){
+            $val=$(".created_database_name").val();
+            if($val==""|| $val==" "){
                 alert("Database name is not selected");
-                $(this).off(e)
+                //$(this).off(e)
+                e.preventDefault();
             }
             else{
-                $input_name=$(".created_database_name").val();
+                $input_name=$val;
                 $char_set=$(".select_db_collation").val();
                 $.ajax({
                     type:"GET",
@@ -200,9 +202,11 @@ event.preventDefault();
                     },
 
                     data:{input_name:$input_name},
+                    success:function(y){
+
+                    },
                     complete:function(){
                         $('#loading').show();
-
                     }
                 });
 
@@ -243,11 +247,11 @@ event.preventDefault();
         if($name!=="" && $name!==" "){
           if($field_name!=="" && $field_name!==" "){
 
-              //$.ajax({
-              //    type:"POST",
-              //    url:"../create_table.html",
-              //    data:{},
-              //})
+              $.ajax({
+                  type:"POST",
+                  url:"../create_finall_table.php",
+                  data:{},
+              })
           }else{
               alert("Missing value in the form!!!")
               ev.preventDefault();
@@ -259,6 +263,7 @@ event.preventDefault();
     });
  $("body").on("click","#create_table_finally",function(){
      $column_quant=$("#add_columns").val();
+     //$("#first_table").dataTable();
 
    $.post("../second.php",{add_columns:$column_quant},function (response){
       $("#required_div_input_quantr").html(response);

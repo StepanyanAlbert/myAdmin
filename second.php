@@ -26,7 +26,7 @@ if($tb_nmb_row==0){
     <table id=\"first_table\">
         <div id=\"table_rows_qunatity\">
             <thead id=\"table_rows_qunatityh\">
-            <tr id=\"header_tr\">
+            <tr class=\"header_tr\">
                 <th>Name</th>
                 <th><span style=\"margin-left: 10px;\">Type </span><a
                         href=\"http://dev.mysql.com/doc/refman/5.6/en/data-types.html\" target=\"_blank\"><i
@@ -47,7 +47,7 @@ if($tb_nmb_row==0){
             <tbody id=\"required_div_input_quantr\">
             <tr>
                 <td><input type=\"text\" class='table_field_name'></td>
-                <td><select class=\"select_from_table\">
+                <td><select class=\"select_from_table_char sa\">
                     <option title=\"A 4-byte integer, signed range is -2,147,483,648 to 2,147,483,647, unsigned range is 0 to 4,294,967,295\">
                         INT
                     </option>
@@ -169,9 +169,9 @@ if($tb_nmb_row==0){
                     </optgroup>
                 </select></td>
                 <td>
-                    <input type=\"text\" id='field_lenght'>
+                    <input type=\"text\" id='field_char_lenght'>
                 </td>
-                <td><select class=\"select_from_table\">
+                <td><select class=\"select_from_table_privileg sa\">
                     <option value=\"NONE\">None</option>
                     <option value=\"USER_DEFINED\">As defined:</option>
                     <option value=\"NULL\">NULL</option>
@@ -179,7 +179,7 @@ if($tb_nmb_row==0){
                 </select></td>
                 <td>
 
-                    <select class=\"select_from_table\">
+                    <select class=\"select_from_table_collation sa\">
                         <option value=\"\"></option>
                         <optgroup label=\"armscii8\" title=\"ARMSCII-8 Armenian\">
                             <option value=\"armscii8_bin\" title=\"Armenian, Binary\">armscii8_bin</option>
@@ -660,7 +660,7 @@ if($tb_nmb_row==0){
                     </select>
                 </td>
 
-                <td><select class=\"select_from_table\">
+                <td><select class=\"select_from_table_insign sa\">
                     <option value=\"\" selected=\"selected\"></option>
                     <option value=\"BINARY\">BINARY</option>
                     <option value=\"UNSIGNED\">UNSIGNED</option>
@@ -669,14 +669,14 @@ if($tb_nmb_row==0){
                 </select>
                 </td>
                 <td>
-                    <select class=\"select_from_table\">
+                    <select class=\"select_from_table_index sa\">
                         <option value=\"none_0\">---</option>
                         <option value=\"primary_0\" title=\"Primary\">PRIMARY</option>
                         <option value=\"unique_0\" title=\"Unique\">UNIQUE</option>
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type=\"text\"></td>
+                <td><input type=\"text\" class='comments'></td>
             </tr>
             </tbody>
              <div id=\"reserve_div\"></div>";
@@ -688,7 +688,7 @@ if($tb_nmb_row==0){
 </div>
 <div class=\"another_tables\">
     <table id=\"table_two \" style=\"display: inline;float:left;margin-top: 25px;\">
-        <tr id=\"header_tr\">
+        <tr class=\"header_tr\">
             <th style=\"width: 350px\">Table comments:</th>
         </tr>
         <tr>
@@ -696,7 +696,7 @@ if($tb_nmb_row==0){
         </tr>
     </table>
     <table id=\"third_table\" style=\"margin-top: 25px;\">
-        <tr id=\"header_tr\">
+        <tr class=\"header_tr\">
             <th style=\"width: 250px\">Collation:</th>
 
         </tr>
@@ -1072,7 +1072,7 @@ if($tb_nmb_row==0){
         </tr>
     </table>
     <table id=\"fourth_table\" style=\"margin-top: 25px;\">
-        <tr id=\"header_tr\">
+        <tr class=\"header_tr\">
             <th class=\"storage_engine\">Storage Engine: <a
                     href=\"http://dev.mysql.com/doc/refman/5.6/en/storage-engines.html\" target=\"_blank\"><i
                     class=\"fa fa-question\"></i></a></th>
@@ -1109,7 +1109,7 @@ if($tb_nmb_row==0){
     <br>
     <table id=\"last_table\" style=\"float:right\">
 
-        <tr id=\"header_tr\">
+        <tr class=\"header_tr\">
             <th style=\"width: 350px\">PARTITION definition:&nbsp; <a
                     href=\"http://dev.mysql.com/doc/refman/5.6/en/partitioning.html\" target=\"_blank\"><i
                     class=\"fa fa-question\"></i></a></th>
@@ -1138,8 +1138,8 @@ $nom_row=trim($_POST['add_columns']," ");
     while($nom_row > 0){
       echo
       "<tr id='mouseover_table_row'>
-                <td><input type=\"text\"></td>
-                <td><select class=\"select_from_table\">
+                <td><input type=\"text\" id=\"column_name\" class=\"table_field_name\"></td>
+                <td><select class=\"select_from_table_char sa\">
                     <option title=\"A 4-byte integer, signed range is -2,147,483,648 to 2,147,483,647, unsigned range is 0 to 4,294,967,295\">
                         INT
                     </option>
@@ -1262,9 +1262,9 @@ $nom_row=trim($_POST['add_columns']," ");
                 </select>
                 </td>
                 <td>
-                    <input type=\"text\">
+                    <input type=\"text\" id='column_lenght'>
                 </td>
-                <td><select class=\"select_from_table\">
+                <td><select class=\"select_from_table_privileg sa\">
                     <option value=\"NONE\">None</option>
                     <option value=\"USER_DEFINED\">As defined:</option>
                     <option value=\"NULL\">NULL</option>
@@ -1272,7 +1272,7 @@ $nom_row=trim($_POST['add_columns']," ");
                 </select></td>
                 <td>
 
-                    <select class=\"select_from_table\">
+                    <select class=\"select_from_table_collation sa\">
                         <option value=\"\"></option>
                         <optgroup label=\"armscii8\" title=\"ARMSCII-8 Armenian\">
                             <option value=\"armscii8_bin\" title=\"Armenian, Binary\">armscii8_bin</option>
@@ -1753,7 +1753,7 @@ $nom_row=trim($_POST['add_columns']," ");
                     </select>
                 </td>
 
-                <td><select class=\"select_from_table\">
+                <td><select class=\"select_from_table_insign sa\">
                     <option value=\"\" selected=\"selected\"></option>
                     <option value=\"BINARY\">BINARY</option>
                     <option value=\"UNSIGNED\">UNSIGNED</option>
@@ -1762,7 +1762,7 @@ $nom_row=trim($_POST['add_columns']," ");
                 </select>
                 </td>
                 <td>
-                    <select class=\"select_from_table\">
+                    <select class=\"select_from_table_index sa\">
                         <option value=\"none_0\">---</option>
                         <option value=\"primary_0\" title=\"Primary\">PRIMARY</option>
                         <option value=\"unique_0\" title=\"Unique\">UNIQUE</option>

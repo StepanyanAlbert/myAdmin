@@ -456,19 +456,19 @@ legend{
 #table_rows_qunatity{
 
 }
-#header_tr{
+.header_tr{
     background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(205,205,205,1))
 
 }
 
-#header_tr th{
+.header_tr th{
     width: 12em;
     height: 30px;
     border:white;
     font-family: sans-serif;
     font-size: 16px;
 }
-.select_from_table{
+.sa{
     height: 27px;
     margin: 8px;
 }
