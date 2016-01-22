@@ -62,9 +62,24 @@ $(window).load(function () {
                    complete:function(){
                        $('#loading').hide();
                    }
+               });
+               $.ajax({
+                   type:"GET",
+                   url:"../create_final_table.php",
+                   data:"db_name="+$db_name,
+                   beforeSend: function(){
+                       $('#loading').show();
+                   },
+                   success:function(result){
+                       alert(result);
+                   },
+                   complete:function(){
+                       $('#loading').hide();
+                   }
                })
            };break;
        }
+
 
     }) ;
     $("body").on("click",".table_names",function (event){
@@ -79,6 +94,7 @@ $(window).load(function () {
     $("body").on("click",".button_go",function(){
 
         $table_name=$(".table_name_new_created").val();
+
         $table_row=$(".number_table_rows").val();
         $.ajax({
             url:"../second.php",
@@ -95,8 +111,7 @@ $(window).load(function () {
             }
         });
 
-        $("#table_name").html($table_name);
-
+        $("#table_name").val($table_name);
     });
     $("body").on("click", "#create_new_base", function () {
         $.post("default.html", "new", function (date) {
@@ -177,6 +192,20 @@ event.preventDefault();
             else{
                 $input_name=$(".created_database_name").val();
                 $char_set=$(".select_db_collation").val();
+                $.ajax({
+                    type:"GET",
+                    url:"../create_final_table.php",
+                    beforeSend: function(){
+                        $('#loading').show();
+                    },
+
+                    data:{input_name:$input_name},
+                    complete:function(){
+                        $('#loading').show();
+
+                    }
+                });
+
             $.ajax({
                type:"GET",
                 url:"../select.php",
@@ -186,9 +215,9 @@ event.preventDefault();
                 data:{input_name:$input_name,
                     collation_name:$char_set},
                 success:function(response){
-                 $(".general_settings").empty();
-                    $(".general_settings").append(response);
-                    $.ajax({
+                 $(".general_settings").empty().append(response);
+
+                                  $.ajax({
                         url: "../select.php",
                         type: "POST",
                         data: "select_databases",
@@ -227,7 +256,7 @@ event.preventDefault();
             alert("Table name shouldn't be empty!!!");
             ev.preventDefault();
         }
-    })
+    });
  $("body").on("click","#create_table_finally",function(){
      $column_quant=$("#add_columns").val();
 
