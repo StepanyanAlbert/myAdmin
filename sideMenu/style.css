@@ -1,0 +1,528 @@
+.php{
+    color:#666699;
+    font-family: Aharoni;
+}
+h2{
+    color:#FF9900;
+    font-family:Helvetica;
+    font-weight:bolder;
+
+}
+.r{
+    margin-left:15px;
+    margin-bottom:15px;
+    cursor: pointer;
+    color: #66afe9;
+}
+.second_php_myAdmin{
+    height: 511px;
+    width:219px;
+    overflow-y:scroll ;
+}
+.phpMyAdmin{
+    width: 239px;
+
+    background:#F3F3F3 ;
+}
+.upper_button{
+    height: 30px;
+    background: #F3F3F3;
+    font-family: "Book Antiqua";
+    border-radius: 22px;
+    margin-left:10px;
+    margin-bottom:25px;
+
+}
+.upper_button:hover{
+background: #FAFAFA;
+}
+.plus_sign,.minus_sign{
+    margin-right:11px;
+    margin-top:5px;
+    cursor: pointer;
+    background: #D2D2D2;
+    color:#767676;
+    border-radius: 5px;
+}
+
+.c{
+    cursor: pointer;
+
+}
+.database_sign{
+    cursor: pointer;
+    margin-right:8px;
+    color:#989898;
+}
+.icon_database_new{
+
+    color:#989898;
+    padding-right:15px;
+    margin-left:20px;
+}
+.create_databse{
+    font-size: 19px;
+        color: #0f0f0f;
+    cursor: pointer;
+    font-family: Tahoma;
+
+}
+#create_new_base{
+cursor: pointer;
+    margin-bottom:15px;
+}
+
+.database_name{
+    display: block;
+
+}
+
+.dat_name{
+    font-size: 113%;
+    font-family: verdana;
+    cursor: pointer;
+
+}
+.dat_name:hover{
+    text-decoration: underline;
+}
+
+.result_data{
+    margin-left:28px;
+    margin-top:10px;
+}
+.sign_plus_small{
+    margin-right:8px;
+    color: #3e8f3e;
+    cursor: pointer;
+}
+.folder_font{
+    margin-right: 10px;
+    margin-left: 7px;
+    color: goldenrod;
+    background: white;
+    cursor: pointer;
+}
+
+.table_names:hover{
+
+text-decoration: underline;
+}
+
+.table_names{
+    cursor: pointer;
+    font-size: 111%;
+    font-family: verdana;
+}
+.create_new_table{
+    margin-top:10px;
+    margin-left:25px;
+
+
+}
+.create_new_table_span{
+    margin-left:18px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 17px;
+    color:#8c8c8c;
+
+}
+.fa-pencil{
+    color:#000;
+    cursor: pointer;
+}
+
+.create_new_table_span:hover{
+    text-decoration: underline;
+}
+
+#server{
+background:#888888 ;
+
+}
+.icon_desktop{
+    margin-left:15px;
+    color:white;
+
+}
+.localhost{
+    color: white;
+cursor: pointer;
+}
+
+.localhost:hover{
+    text-decoration: underline;
+
+}
+.new_database_sign{
+    color: white;
+}
+
+.database_name_new{
+    color: white;
+    cursor: pointer;
+    margin-left:5px;
+}
+.top_menu_structurei{
+    display: inline;
+    margin-left:8px;
+
+}
+.pos_fixed{
+    position: fixed;
+    z-index: 1;
+    width: 81%;
+}
+
+.top_menu_structure{
+    color:#235A90;
+    margin-left:8px;
+    margin-right:8px;
+    line-height: 29px;
+}
+.structure:hover{
+    cursor: pointer;
+}
+.phpMyAdmin::-webkit-scrollbar-thumb {
+    background-color: #818B99;
+    border: 3px solid transparent;
+    border-radius: 9px;
+    background-clip: content-box;
+}
+.submenues{
+    background: #E5E5E5;
+}
+
+.c{
+    display: inline;
+    line-height: 30px;
+    border-right:  2px solid white;
+    padding: 7px;
+}
+.text{
+    color: #235A90;
+    margin-left:3px;
+    margin-right:4px;
+}
+
+.dropdown_more{
+    display: inline;
+    background: #E5E5E5;
+    line-height: 30px;
+    border-right:  2px solid white;
+    padding: 7px;
+}
+
+
+.select_dropdown{
+    background: #E5E5E5;
+    width:60px;
+    border-radius: 10px;
+}
+.same{
+    margin-right:15px;
+}
+
+.color_blu_text{
+    color:#235A81;
+    font-weight:bolder;
+    font-size: 15px;
+}
+
+.dropdown_more a {
+    text-decoration: none;
+}
+.general_settings{
+    margin-top:20px;
+}
+.server_connection{
+    margin-left:15px;
+    padding-bottom:25px;
+    color: #444444;
+    font-size: 17px;
+
+}
+
+.question_mark{
+    font-size: 17px;
+    background:blue;
+    color:white
+}
+#theme{
+    margin-top:15px;
+    margin-bottom:15px;
+
+}
+.panel_head{
+    background-color:#BBBBBB !important;
+    height: 50px;
+    margin-bottom:25px;
+}
+.m{
+    margin-top:5px;
+    color: #804449;
+    font-family: verdana;
+    font-size: 15px;
+}
+.htwo_style{
+    color: #FFFFF7;
+    line-height:0;
+    font-family: sans-serif;
+    font-weight:100;
+}
+.dropdown-toggle{
+    background: #E5E5E5;
+}
+.alert_box{
+    background: #E8EEF1;
+    border:1px solid black  ;
+    border-radius: 5px;
+    line-height: 3;
+    font-size: 15px;
+    font-family:Verdana ;
+    padding-left: 15px;
+    color:#000;
+}
+
+.date_base{
+    color: #777777;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.create_database_input{
+    margin-top:15px;
+    font-family: Serif;
+    font-weight:600;
+    font-size: 20px;
+
+}
+.new_icond{
+    margin-right:10px;
+    color:#A9A9A9;
+}
+.new_icon{
+    margin-left:10px;
+    color: blue;
+}
+.select_db_collation{
+    height: 26px;
+}
+
+.div_input{
+    padding: 15px;
+}
+.div_input input{
+   margin-right:8px;
+}
+.button_create_database{
+    border-radius: 25px;
+    margin-left: 8px;
+    background:#EAEAEA ;
+    font-family: Verdana;
+    color: #000;
+    font-weight:bold;
+}
+.warning_div{
+    background: #E8EEF1;
+    border:1px solid black;
+    border-radius: 5px;
+    font-weight:100;
+    font-family:Verdana;
+    margin-left: 6px;
+}
+.fa-warning{
+    color:#D0B200;
+}
+.table_data{
+    margin-top:25px;
+    width: 550px;
+
+}
+.table_header{
+    border-bottom: 10px solid white;
+    cursor: pointer;
+    background: -webkit-linear-gradient( #FCFCFC,#D0D0D0);
+}
+thead{
+    border-bottom: 10px solid white;
+}
+.check_privileges{
+   color: #237EB4;
+    cursor: pointer;
+}
+
+.check_privileges i{
+    color:black;
+    margin-right:4px;
+
+}
+.check_privileges :hover{
+    text-decoration: underline;
+}
+.table_row:hover{
+ background: #D9D9D9 !important;
+}
+
+.total_count_databases{
+    background:-webkit-linear-gradient( #FCFCFC,#D0D0D0);
+    color:black;
+    font-weight:bold;
+}
+
+.alert_div_no_tables{
+    background: #E8EEF1;
+    line-height: 2;
+    border: 1px solid brown;
+    padding-top: 8px;
+    border-radius: 6px;
+    margin-bottom:20px;
+}
+.span_legend_title{
+    font-family: verdana;
+    margin-left:8px;
+}
+
+fieldset{
+    background: #EEEEEE;
+    padding: 30px;
+    border-radius: 50px;
+}
+.number_rows{
+    margin-left:25px;
+    font-family:Verdana;
+}
+.create_table_go_button{
+    background: #D3DCE3;
+    height: 100px;
+    border-radius: 50px;
+
+
+}
+.header_big_div{
+    background: azure;
+    border-left: 4px solid #AAAAAA;
+}
+.button_go{
+    border-radius: 15px;
+    padding: 10px;
+    margin-top:35px;
+    margin-right:70px;
+    float: right;
+    margin-right:15px;
+    cursor: pointer;
+}
+
+
+legend{
+    width: 181px;
+    height: 38px;
+}
+
+.reload{
+    cursor: pointer;
+}
+.same_span{
+    margin-left: 10px;
+    font-family: sans-serif;
+    font-size: 18px
+}
+
+#create_table_finally{
+     margin-left: 15px;
+    border-radius: 25px;
+    padding: 10px;
+    background: #DEDEDE;
+
+}
+#structure_full_width{
+    width: 100%;
+    background:#D3DCE3 ;
+    margin-top: 10px;
+    margin-bottom:2px;
+}
+#table_rows_qunatity{
+
+}
+#header_tr{
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(205,205,205,1))
+
+}
+
+#header_tr th{
+    width: 12em;
+    height: 30px;
+    border:white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.select_from_table{
+    height: 27px;
+    margin: 8px;
+}
+#third_table{
+    margin-left:125px;
+    float: left;
+}
+
+#fourth_table{
+    float:left;
+    margin-left:100px;
+}
+#tbl_storage_engine{
+    width: 170px;
+    margin-top: 10px;
+    height: 26px;
+    margin-left: 10px;
+}
+#tbl_collation{
+    width: 240px;
+    margin-top: 10px;
+    height: 26px;
+    margin-left: 5px;}
+#last_table{
+    position: relative;
+    right: 847px;
+    top: 49px;
+    float: right;
+
+}
+.total_countOf_daabases{
+    height: 35px;
+    line-height: 30px;
+}
+#partition_definition{
+    margin-top:10px;
+    margin-left:10px;
+    max-height:58px;
+max-width: 300px;
+}
+
+#preview{
+    width: 98%;
+    height: 80px;
+    background: #D3DCE3;
+    margin-top: 220px;
+    margin-left: 12px;
+    border-radius: 7px;
+
+}
+.button_preview_save {
+    float: right;
+    margin-right: 35px;
+    margin-top: 25px;
+    border-radius: 12px;
+    background: #F0F0F0;
+    font-weight: bold;
+}
+.button_preview_preview {
+    float: right;
+    margin-right: 35px;
+    margin-top: 25px;
+    border-radius: 12px;
+    background: #F0F0F0;
+    font-weight: bold;
+}
+#hovering_div_inside{
+    display: inline;
+}
