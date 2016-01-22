@@ -9,9 +9,15 @@ $(window).load(function () {
             url: "../select.php",
             type: "POST",
             data: "select_databases",
+            beforeSend: function(){
+                $('#loading').show();
+            },
             success: function foo(s) {
-                $(".second_php_myAdmin").empty();
-                $(".second_php_myAdmin").append(s)
+                $(".second_php_myAdmin").empty().append(s);
+
+            },
+            complete:function(){
+                $('#loading').hide();
             }
         });
     });
@@ -19,9 +25,16 @@ $(window).load(function () {
         url: "../select.php",
         type: "POST",
         data: "select_databases",
+        beforeSend: function(){
+            $('#loading').show();
+        },
         success: function foo(s) {
             $(".second_php_myAdmin").html(s)
+        },
+        complete:function(){
+            $('#loading').hide();
         }
+
     });
 
     $("body").on("click",".create_new_table_span",function (event){
@@ -34,13 +47,20 @@ $(window).load(function () {
            case "information_schema":{alert("This is a system databse");};break;
 
            default:{
-               $(this).closest('.database_name').css("background","#D9D9D9")
+               $(this).closest('.database_name').css("background","#D9D9D9");
+
                $.ajax({
                 type:"GET",
                 url:"../create_table.php",
+                   beforeSend: function(){
+                       $('#loading').show();
+                   },
                 data:{db_name:$db_name},
                    success:function(response){
                        $(".general_settings").html(response)
+                   },
+                   complete:function(){
+                       $('#loading').hide();
                    }
                })
            };break;
@@ -60,11 +80,20 @@ $(window).load(function () {
 
         $table_name=$(".table_name_new_created").val();
         $table_row=$(".number_table_rows").val();
-        $.get("../second.php",{table_name:$table_name,
-            row_quant:$table_row
-        },function(s){
+        $.ajax({
+            url:"../second.php",
+            data:{table_name:$table_name,
+                     row_quant:$table_row},
+            beforeSend: function(){
+                $('#loading').show();
+            },
+            success:function(s) {
             $(".general_settings").html(s)
-        })
+        },
+            complete:function(){
+                $('#loading').hide();
+            }
+        });
 
         $("#table_name").html($table_name);
 
@@ -76,15 +105,24 @@ $(window).load(function () {
         $.ajax({
             type:"GET",
             url:"../select.php",
+            beforeSend: function(){
+                $('#loading').show();
+            },
             data:{total_count_databases:22},
             success:function(data_count_databases){
                 $(".total_countOf_daabases").append(data_count_databases);
-            }
+            },
+            complete:function(){
+                $('#loading').hide();
+            },
         });
         $.ajax({
             type:"GET",
             url:"../select.php",
             data:{select_db_char:"1"},
+            beforeSend: function(){
+                $('#loading').show();
+            },
             success:function(result){
                 $(".table").append(result);
                 $("#table_database").DataTable({
@@ -94,7 +132,10 @@ $(window).load(function () {
                     "bInfo": false,
                     "bAutoWidth": false,
                 });
-            }
+            },
+            complete:function(){
+                $('#loading').hide();
+            },
         });
     });
 
@@ -109,10 +150,16 @@ $(window).load(function () {
                 $.ajax({
                     type: "GET",
                     url: "../select.php",
+                    beforeSend: function(){
+                        $('#loading').show();
+                    },
                     data: {database_name: $databas_name},
                     success: function (data) {
                         $last.append("<div class='create_new_table'><i class='fa  fa-pencil'><span class='create_new_table_span'>New</span></i></div>" + "<span class='table_names_from_database'>" + data + "</span>");
 event.preventDefault();
+                    },
+                    complete:function(){
+                        $('#loading').hide();
                     }
                 });
 
@@ -133,6 +180,9 @@ event.preventDefault();
             $.ajax({
                type:"GET",
                 url:"../select.php",
+                beforeSend: function(){
+                    $('#loading').show();
+                },
                 data:{input_name:$input_name,
                     collation_name:$char_set},
                 success:function(response){
@@ -143,9 +193,11 @@ event.preventDefault();
                         type: "POST",
                         data: "select_databases",
                         success: function foo(s) {
-                            $(".second_php_myAdmin").empty();
-                            $(".second_php_myAdmin").append(s)
-                        }
+                            $(".second_php_myAdmin").empty().append(s);
+                        },
+                        complete:function(){
+                            $('#loading').hide();
+                        },
                     });
 
                 }

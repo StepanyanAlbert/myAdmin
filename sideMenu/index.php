@@ -18,6 +18,8 @@
 </head>
 <body>
 <div class="the_biggest">
+
+
     <div class="phpMyAdmin col-lg-2 col-xs-2 col-sm-2 col-md-2">
         <h2 align="center"><span class="php reload">php</span><span class="reload">MyAdmin</span></h2>
 
@@ -49,6 +51,7 @@
 
 
     <div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 header_big_div">
+
 <div class="pos_fixed">
         <div class="row" id="server">
             <p>
@@ -139,7 +142,7 @@
 
         </div>
 </div>
-        <div class="row general_settings" style="margin-top: 85px">
+        <div class="row general_settings" style="margin-top: 85px"> <img src="../images/loading.gif" id="loading"  alt="image">
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                 <div class="panel  panel-danger" >
 
