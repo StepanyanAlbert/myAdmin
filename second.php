@@ -676,7 +676,7 @@ if($tb_nmb_row==0){
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type=\"text\" class='comments'></td>
+                <td><input type='checkbox' name='auto_increment'><input type=\"text\" class='comments'></td>
             </tr>
             </tbody>
              <div id=\"reserve_div\"></div>";
@@ -692,7 +692,7 @@ if($tb_nmb_row==0){
             <th style=\"width: 350px\">Table comments:</th>
         </tr>
         <tr>
-            <td><input style=\"width: 330px;margin: 10px;\" type=\"text\"></td>
+            <td><input style=\"width: 330px;margin: 10px;\" type=\"text\" class=\"table_comments\"></td>
         </tr>
     </table>
     <table id=\"third_table\" style=\"margin-top: 25px;\">
@@ -1262,7 +1262,7 @@ $nom_row=trim($_POST['add_columns']," ");
                 </select>
                 </td>
                 <td>
-                    <input type=\"text\" id='column_lenght'>
+                    <input type=\"text\" id='field_char_lenght'>
                 </td>
                 <td><select class=\"select_from_table_privileg sa\">
                     <option value=\"NONE\">None</option>
@@ -1769,7 +1769,7 @@ $nom_row=trim($_POST['add_columns']," ");
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type=\"text\"></td>
+                <td><input type='checkbox' name='auto_increment'><input type=\"text\" class='comments'></td>
             </tr>";
         $nom_row--;
     }
