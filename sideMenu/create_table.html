@@ -4,7 +4,7 @@
             <span class="same_span" style="font-family: sans-serif; font-size: 18px ;">Table name:</span> <input
                 id='table_name' type="text" style="width:300px">
             <span class="same_span" style="">Add  </span>
-            <input type="number" id='add_columns' style="width:60px" min> <span class="same_spa">colomn(s)</span>
+            <input type="number" id='add_columns' style="width:60px" min="1"> <span class="same_spa">colomn(s)</span>
             <button id="create_table_finally">
                 Go
             </button>
@@ -34,8 +34,8 @@
             </thead>
             <tbody id="required_div_input_quantr">
             <tr style="background: white;">
-                <td><input type="text" class="table_field_name"></td>
-                <td><select class="select_from_table_char sa">
+                <td><input type="text" class="table_field_name" name="table_field_name[]"></td>
+                <td><select class="select_from_table_char sa" name="field_type[]">
                     <option title="A 4-byte integer, signed range is -2,147,483,648 to 2,147,483,647, unsigned range is 0 to 4,294,967,295">
                         INT
                     </option>
@@ -157,7 +157,7 @@
                     </optgroup>
                 </select></td>
                 <td>
-                    <input type="text" id='field_char_lenght'>
+                    <input type="text" id='field_char_lenght' name="field_char_lenght[]">
                 </td>
                 <td><select class="select_from_table_privileg sa">
                     <option value="NONE">None</option>
@@ -664,7 +664,8 @@
                         <option value="index_0" title="Index">INDEX</option>
                         <option value="fulltext_0" title="Fulltext">FULLTEXT</option>
                     </select></td>
-                <td><input type='checkbox' name='auto_increment'><input type="text" class="comments"></td>
+                <td><input type='checkbox'  name='auto_increment[]' class="checkbox" value="1">
+                    <input type="text" class="comments" name="comments[]"></td>
             </tr>
             </tbody>
         </table>

@@ -251,25 +251,66 @@ $(window).load(function () {
     });
 
     $("body").on("click", ".button_preview_save", function (ev) {
-        $field_type=$(".select_from_table_char").val();
-        $char_lenght=$("#field_char_lenght").val();
-        $field_privileg=$(".select_from_table_privileg").val();
-        $field_collation=$(".select_from_table_collation").val();
-        $field_attributes=$(".select_from_table_insign").val();
-        $fiedl_index=$(".select_from_table_index").val();
-        $table_comments=$(".table_comments").val();
-        $table_collation=$("#tbl_collation").val();
-        $engine=$("#tbl_storage_engine").val();
-        $partition_def=$("#partitiondefinition").val();
-        $comments=$(".comments").val();
+        $table_comments = $(".table_comments").val();
+        $table_collation = $("#tbl_collation").val();
+        $engine = $("#tbl_storage_engine").val();
+        $partition_def = $("#partitiondefinition").val();
         $name = $("#table_name").val();
-        $field_name = $(".table_field_name").val();
+        //$field_name=[$("input[name=table_field_name]")];
+        $field_names = [];
+        $field_char_lenght = [];
+        $field_type = [];
+        $field_privileg=[];
+        $field_collation=[];
+        $field_attributes=[];
+        $field_index=[];
+        $checkbox=[];
+        $comments=[];
+        $('input[name="table_field_name[]"]').each(function () {
+            $field_names.push($(this).val());
+        });
 
-        $(".select_from_table_char").each(function(){
-            document.write($(".table_field_name"));
+        $(".select_from_table_char :selected").each(function () {
+            $field_type.push($(this).val());
+        });
+
+        $("input[name='field_char_lenght[]']").each(function () {
+            $field_char_lenght.push($(this).val());
+        });
+
+        $(".select_from_table_privileg :selected").each(function () {
+            $field_privileg.push($(this).val());
         })
 
-        //document.write("field name :"+$field_name+"<br>"+"field type : "+$field_type+"<br>"+" lenght: "+$char_lenght+"<br>"+" field privileg: "+$field_privileg+"<br>"+"field collaon :" + $field_collation+"<br>"+"field_atributes "+$field_attributes+"<br>"+"field index: "+$fiedl_index+"<br>"+$("input[name=auto_increment] ").is(':checked')+"<br>"+"field comments :"+$comments+"<br>"+"table comments: "+$table_comments+"<br>"+"table collation: "+$table_collation+"<br>"+"engine: "+$engine+"<br>"+"partittion def: "+$partition_def);
+        $(".select_from_table_collation :selected").each(function () {
+            $field_collation.push($(this).val());
+        });
+
+        $(".select_from_table_insign :selected").each(function () {
+            $field_attributes.push($(this).val());
+        });
+
+        $(".select_from_table_index :selected").each(function () {
+            $field_index.push($(this).val());
+        });
+        $("input[type=checkbox]:checked").each(function () {
+            $checkbox.push($(this).val());
+        });
+        $("input[name='comments[]']").each(function () {
+            $comments.push($(this).val());
+        });
+
+
+
+        console.log($field_names);
+        console.log($field_type);
+        console.log($field_char_lenght);
+        console.log($field_privileg);
+        console.log($field_collation);
+        console.log($field_attributes);
+        console.log($field_index);
+        console.log($checkbox);
+
         if ($name !== "" && $name !== " ") {
             if ($field_name !== "" && $field_name !== " ") {
 
@@ -283,7 +324,7 @@ $(window).load(function () {
                 ev.preventDefault();
             }
         } else {
-            alert("Table name shouldn't be empty!!!");
+            //alert("Table name shouldn't be empty!!!");
             ev.preventDefault();
         }
     });

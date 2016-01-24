@@ -46,8 +46,8 @@ if($tb_nmb_row==0){
         <div id=\"required_div_input_quant\">
             <tbody id=\"required_div_input_quantr\">
             <tr>
-                <td><input type=\"text\" class='table_field_name'></td>
-                <td><select class=\"select_from_table_char sa\">
+                <td><input type=\"text\" class='table_field_name' name='table_field_name[]'></td>
+                <td><select class=\"select_from_table_char sa\" name=\"field_type[]\">
                     <option title=\"A 4-byte integer, signed range is -2,147,483,648 to 2,147,483,647, unsigned range is 0 to 4,294,967,295\">
                         INT
                     </option>
@@ -169,7 +169,7 @@ if($tb_nmb_row==0){
                     </optgroup>
                 </select></td>
                 <td>
-                    <input type=\"text\" id='field_char_lenght'>
+                    <input type=\"text\" id='field_char_lenght' name='field_char_lenght[]'>
                 </td>
                 <td><select class=\"select_from_table_privileg sa\">
                     <option value=\"NONE\">None</option>
@@ -676,7 +676,8 @@ if($tb_nmb_row==0){
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type='checkbox' name='auto_increment'><input type=\"text\" class='comments'></td>
+                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$tb_nmb_row'>
+                <input type=\"text\" class='comments' name=\"comments[]\"></td>
             </tr>
             </tbody>
              <div id=\"reserve_div\"></div>";
@@ -1129,17 +1130,20 @@ if($tb_nmb_row==0){
 
 
 }
-if(isset($_POST['add_columns'])&& $_POST['add_columns']!==""){
-$nom_row=trim($_POST['add_columns']," ");
-    if($nom_row==0){
-        $nom_row=1;
-    }
+if(isset($_POST['add_columns'])&& $_POST['add_columns']!=="") {
+    $nom_row = trim($_POST['add_columns'], " ");
+    if ($nom_row == 0) {
+        $nom_row = 1;
 
-    while($nom_row > 0){
-      echo
-      "<tr id='mouseover_table_row'>
-                <td><input type=\"text\" id=\"column_name\" class=\"table_field_name\"></td>
-                <td><select class=\"select_from_table_char sa\">
+    }
+    while ($nom_row > 0) {
+
+
+            echo
+            "<tr id='mouseover_table_row'>
+              <td><input type=\"text\" id=\"column_name\" name=\"table_field_name[]\" class=\"table_field_name\"></td>
+
+                <td><select class=\"select_from_table_char sa\" name=\"field_type[]\">
                     <option title=\"A 4-byte integer, signed range is -2,147,483,648 to 2,147,483,647, unsigned range is 0 to 4,294,967,295\">
                         INT
                     </option>
@@ -1262,7 +1266,7 @@ $nom_row=trim($_POST['add_columns']," ");
                 </select>
                 </td>
                 <td>
-                    <input type=\"text\" id='field_char_lenght'>
+                    <input type=\"text\" id='field_char_lenght' name='field_char_lenght[]'>
                 </td>
                 <td><select class=\"select_from_table_privileg sa\">
                     <option value=\"NONE\">None</option>
@@ -1769,11 +1773,10 @@ $nom_row=trim($_POST['add_columns']," ");
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type='checkbox' name='auto_increment'><input type=\"text\" class='comments'></td>
+                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$nom_row'
+                ><input type=\"text\" class='comments' name=\"comments[]\"></td>
             </tr>";
-        $nom_row--;
-    }
-
+            $nom_row--;
+        }
 
 }
-

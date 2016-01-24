@@ -476,7 +476,7 @@ legend{
     margin-left:125px;
     float: left;
 }
-input[name="auto_increment"]{
+input[name="auto_increment[]"]{
     position: absolute;
     left: 1348px;
     width: 16px;
