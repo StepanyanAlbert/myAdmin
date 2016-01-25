@@ -1,10 +1,14 @@
 <?php
-if(isset($_GET['table_name'])&& isset($_GET['row_quant'])){
-    $tb_name=$_GET['table_name'];
-    $tb_nmb_row=trim($_GET['row_quant'],"\'");
-if($tb_nmb_row==0){
-    $tb_nmb_row=1;
-}
+if (isset($_GET['table_name']) && isset($_GET['row_quant'])) {
+
+    $tb_name = $_GET['table_name'];
+    $tb_nmb_row = trim($_GET['row_quant'], "\'");
+
+
+    if ($tb_nmb_row == 0) {
+        $tb_nmb_row = 1;
+    }
+    $count = 1;
     echo "<div class=\"main\">
 <div class=\"bigger\">
     <div class=\"table_rows_input_variety\">
@@ -39,12 +43,12 @@ if($tb_nmb_row==0){
                 <th><span style=\"margin-left: 10px;\"> Null Index </span></th>
                 <th><span style=\"margin-left: 10px;\"> A_I Comments</span></th>
             </tr>
-            </thead>";
+            </thead>
+            </div> <div id=\"required_div_input_quant\">
+            <tbody id=\"required_div_input_quantr\">";
 
-    while($tb_nmb_row > 0){
- echo "</div>
-        <div id=\"required_div_input_quant\">
-            <tbody id=\"required_div_input_quantr\">
+    while ($tb_nmb_row > 0) {
+        echo "
             <tr>
                 <td><input type=\"text\" class='table_field_name' name='table_field_name[]'></td>
                 <td><select class=\"select_from_table_char sa\" name=\"field_type[]\">
@@ -676,14 +680,15 @@ if($tb_nmb_row==0){
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$tb_nmb_row'>
+                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$count'>
                 <input type=\"text\" class='comments' name=\"comments[]\"></td>
             </tr>
-            </tbody>
-             <div id=\"reserve_div\"></div>";
+           ";
         $tb_nmb_row--;
+        $count++;
     }
-   echo "</div>
+    echo " </tbody>
+             <div id=\"reserve_div\"></div></div>
 
     </table>
 </div>
@@ -1117,7 +1122,7 @@ if($tb_nmb_row==0){
         </tr>
         <tr>
             <td>
-                <textarea  id=\"partitiondefinition\" cols=\"35\" rows=\"2\" dir=\"ltr\"></textarea>
+                <textarea  id=\"partitiondefinition\" cols=\"35\" rows=\"2\" dir=\"ltr\" maxlength='150px' ></textarea>
             </td>
         </tr>
     </table>
@@ -1130,17 +1135,21 @@ if($tb_nmb_row==0){
 
 
 }
-if(isset($_POST['add_columns'])&& $_POST['add_columns']!=="") {
+if (isset($_POST['add_columns']) && $_POST['add_columns'] !== "") {
     $nom_row = trim($_POST['add_columns'], " ");
     if ($nom_row == 0) {
         $nom_row = 1;
 
     }
+    if (isset($_POST['last_val'])) {
+        $count = (int)$_POST['last_val']+1;
+    }
+
     while ($nom_row > 0) {
 
 
-            echo
-            "<tr id='mouseover_table_row'>
+        echo
+        "<tr id='mouseover_table_row'>
               <td><input type=\"text\" id=\"column_name\" name=\"table_field_name[]\" class=\"table_field_name\"></td>
 
                 <td><select class=\"select_from_table_char sa\" name=\"field_type[]\">
@@ -1773,10 +1782,11 @@ if(isset($_POST['add_columns'])&& $_POST['add_columns']!=="") {
                         <option value=\"index_0\" title=\"Index\">INDEX</option>
                         <option value=\"fulltext_0\" title=\"Fulltext\">FULLTEXT</option>
                     </select></td>
-                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$nom_row'
+                <td><input type='checkbox' name='auto_increment[]' class=\"checkbox\" value='$count'
                 ><input type=\"text\" class='comments' name=\"comments[]\"></td>
             </tr>";
-            $nom_row--;
-        }
+        $nom_row--;
+        $count++;
+    }
 
 }

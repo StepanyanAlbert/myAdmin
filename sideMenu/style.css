@@ -83,7 +83,12 @@ background: #FAFAFA;
 cursor: pointer;
     margin-bottom:15px;
 }
+#partitiondefinition{
 
+    max-width: 350px;
+    max-height: 70px;
+
+}
 .database_name{
     display: block;
 
@@ -448,7 +453,7 @@ legend{
 
 }
 #structure_full_width{
-    width: 100%;
+    width: 114%;
     background:#D3DCE3 ;
     margin-top: 10px;
     margin-bottom:2px;

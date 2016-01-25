@@ -104,6 +104,7 @@ $(window).load(function () {
 
         $table_row = $(".number_table_rows").val();
         $.ajax({
+            type:"GET",
             url: "../second.php",
             data: {
                 table_name: $table_name,
@@ -330,10 +331,11 @@ $(window).load(function () {
     });
     $("body").on("click", "#create_table_finally", function () {
         $column_quant = $("#add_columns").val();
+        $last_value=$(".checkbox").last().val();
         //$("#first_table").dataTable();
 
-        $.post("../second.php", {add_columns: $column_quant}, function (response) {
-            $("#required_div_input_quantr").html(response);
+        $.post("../second.php", {add_columns: $column_quant,last_val:$last_value}, function (response) {
+            $("#required_div_input_quantr").last().append(response);
         })
     });
 
